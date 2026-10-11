@@ -12,7 +12,7 @@ $entries = @(
         if (-not $target.StartsWith($repositoryRoot + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
             throw 'Ruta fuera del repositorio.'
         }
-        $item = Get-Item -LiteralPath $target
+        $item = Get-Item -LiteralPath $target -Force
         [ordered]@{
             path = $relativePath
             bytes = $item.Length

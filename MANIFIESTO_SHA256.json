@@ -1,6 +1,6 @@
 {
     "formatVersion":  1,
-    "createdAtUtc":  "2026-10-11T21:15:53.007Z",
+    "createdAtUtc":  "2026-10-11T21:20:03.712Z",
     "files":  [
                   {
                       "path":  ".gitattributes",
@@ -439,13 +439,13 @@
                   },
                   {
                       "path":  "Documentacion/scripts/Actualizar-Manifiesto.ps1",
-                      "bytes":  1473,
-                      "sha256":  "471979769BA38E87F8244709DF9A646354630CCB76B2CD83EEC57DCC9DCB7DD0"
+                      "bytes":  1480,
+                      "sha256":  "CEB780BA8D0776F7041D32FC74AE047F5E6D9976F0828593F1B3F6DCF69F772A"
                   },
                   {
                       "path":  "Documentacion/scripts/Verificar-Manifiesto.ps1",
-                      "bytes":  931,
-                      "sha256":  "A08969E44F8DF1DF5F0263CDCDDDFB32FBC2B4B531BACB79CFBD595CC396CB57"
+                      "bytes":  938,
+                      "sha256":  "44D653BAD63E61E7FF31EFB865E9103BEEA81880F4108231A5A530A1D6415908"
                   },
                   {
                       "path":  "Documentacion/specs/backend/ERRORES_Y_SLO_V1_1.md",
