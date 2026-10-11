@@ -1,0 +1,193 @@
+openapi: 3.0.3
+info:
+  title: Existing Products Consumer Contract
+  version: 1.0.0
+  description: >-
+    Consumer-owned contract for the two upstream operations required by the Similar
+    Products service. It documents tolerated provider deviations at the HTTP boundary;
+    it is not a claim about the provider's complete API.
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: http://localhost:3001
+    description: Local simulated provider
+tags:
+  - name: Existing products provider
+    description: Operations consumed from the pre-existing product service.
+paths:
+  /product/{productId}/similarids:
+    get:
+      tags:
+        - Existing products provider
+      operationId: fetchSimilarProductIds
+      summary: Fetch ordered similar product identifiers
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/ProductIdPath'
+        - $ref: '#/components/parameters/CorrelationIdHeader'
+      responses:
+        '200':
+          description: Ordered raw identifiers. String and integer values are tolerated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RawSimilarProductIds'
+              examples:
+                numericMockPayload:
+                  value:
+                    - 2
+                    - 3
+                    - 4
+                mixedToleratedPayload:
+                  value:
+                    - '2'
+                    - 3
+                    - '4'
+                empty:
+                  value: []
+        '404':
+          $ref: '#/components/responses/UpstreamNotFound'
+        '429':
+          $ref: '#/components/responses/UpstreamRateLimited'
+        default:
+          $ref: '#/components/responses/UnexpectedUpstreamResponse'
+      x-consumer-policy:
+        normalization: Convert accepted integer identifiers to canonical decimal strings.
+        duplicates: Preserve first occurrence and discard later duplicates.
+        invalidResponse: Map to UPSTREAM_BAD_RESPONSE.
+  /product/{productId}:
+    get:
+      tags:
+        - Existing products provider
+      operationId: fetchProductDetail
+      summary: Fetch one product detail
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/ProductIdPath'
+        - $ref: '#/components/parameters/CorrelationIdHeader'
+      responses:
+        '200':
+          description: Product detail accepted by the consumer.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpstreamProductDetail'
+              example:
+                id: '2'
+                name: Dress
+                price: 19.99
+                availability: true
+        '404':
+          $ref: '#/components/responses/UpstreamNotFound'
+        '429':
+          $ref: '#/components/responses/UpstreamRateLimited'
+        default:
+          $ref: '#/components/responses/UnexpectedUpstreamResponse'
+      x-consumer-policy:
+        idMatch: The response id must equal the requested canonical id.
+        additionalProperties: Ignore unknown additive fields after boundary validation.
+        invalidResponse: Map to UPSTREAM_BAD_RESPONSE.
+components:
+  parameters:
+    ProductIdPath:
+      name: productId
+      in: path
+      required: true
+      description: Canonical product identifier sent by the consumer.
+      schema:
+        $ref: '#/components/schemas/ProductId'
+      example: '1'
+    CorrelationIdHeader:
+      name: X-Correlation-ID
+      in: header
+      required: false
+      description: Correlation identifier propagated when the provider supports it.
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 64
+      example: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+  headers:
+    RetryAfter:
+      description: Provider retry indication, if present.
+      required: false
+      schema:
+        type: string
+  responses:
+    UpstreamNotFound:
+      description: The requested upstream resource was not found. The body is not trusted.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UntrustedUpstreamError'
+          example:
+            message: Product not found
+    UpstreamRateLimited:
+      description: The provider rejected the request due to rate limiting.
+      headers:
+        Retry-After:
+          $ref: '#/components/headers/RetryAfter'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UntrustedUpstreamError'
+    UnexpectedUpstreamResponse:
+      description: >-
+        Any other provider response, including 5xx. Its body is untrusted and is not
+        propagated to the public API.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UntrustedUpstreamError'
+  schemas:
+    ProductId:
+      type: string
+      minLength: 1
+      example: '1'
+    RawSimilarProductId:
+      description: Provider identifier accepted by the tolerant boundary reader.
+      oneOf:
+        - $ref: '#/components/schemas/ProductId'
+        - type: integer
+          minimum: 0
+          example: 2
+    RawSimilarProductIds:
+      type: array
+      minItems: 0
+      description: >-
+        Ordered raw identifiers. Duplicates are tolerated here and removed by first
+        occurrence after normalization.
+      items:
+        $ref: '#/components/schemas/RawSimilarProductId'
+    UpstreamProductDetail:
+      type: object
+      additionalProperties: true
+      description: Provider product detail accepted before mapping to the domain.
+      required:
+        - id
+        - name
+        - price
+        - availability
+      properties:
+        id:
+          $ref: '#/components/schemas/ProductId'
+        name:
+          type: string
+          minLength: 1
+        price:
+          type: number
+          minimum: 0
+        availability:
+          type: boolean
+    UntrustedUpstreamError:
+      type: object
+      additionalProperties: true
+      description: Optional provider error body. No property is required or propagated.
+      properties:
+        message:
+          type: string
+        code:
+          oneOf:
+            - type: string
+            - type: integer

@@ -1,0 +1,51 @@
+{
+  "id": null,
+  "uid": "itx-acceptance",
+  "title": "Inditex - Contractual acceptance",
+  "schemaVersion": 30,
+  "version": 1,
+  "refresh": "5s",
+  "time": { "from": "now-15m", "to": "now" },
+  "panels": [
+    {
+      "id": 1, "type": "stat", "title": "Expected responses by case >= 99%",
+      "datasource": "myinfluxdb", "gridPos": { "h": 6, "w": 24, "x": 0, "y": 0 },
+      "targets": [{ "refId": "A", "rawQuery": true, "resultFormat": "time_series", "alias": "$tag_case",
+        "query": "SELECT mean(\"value\") FROM \"expected_result_rate\" WHERE $timeFilter GROUP BY \"case\"" }],
+      "fieldConfig": { "defaults": { "unit": "percentunit", "thresholds": { "mode": "absolute", "steps": [
+        { "color": "red", "value": null }, { "color": "green", "value": 0.99 }
+      ] } }, "overrides": [] },
+      "options": { "colorMode": "background", "graphMode": "none", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false } }
+    },
+    {
+      "id": 2, "type": "stat", "title": "Fast cases p95 < 1000 ms",
+      "datasource": "myinfluxdb", "gridPos": { "h": 6, "w": 12, "x": 0, "y": 6 },
+      "targets": [{ "refId": "A", "rawQuery": true, "resultFormat": "time_series", "alias": "$tag_case",
+        "query": "SELECT percentile(\"value\",95) FROM \"scenario_duration_ms\" WHERE $timeFilter AND (\"case\"='normal' OR \"case\"='notFound' OR \"case\"='error') GROUP BY \"case\"" }],
+      "fieldConfig": { "defaults": { "unit": "ms", "thresholds": { "mode": "absolute", "steps": [
+        { "color": "green", "value": null }, { "color": "red", "value": 1000 }
+      ] } }, "overrides": [] },
+      "options": { "colorMode": "background", "graphMode": "none", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false } }
+    },
+    {
+      "id": 3, "type": "stat", "title": "Slow cases p95 < 7000 ms",
+      "datasource": "myinfluxdb", "gridPos": { "h": 6, "w": 12, "x": 12, "y": 6 },
+      "targets": [{ "refId": "A", "rawQuery": true, "resultFormat": "time_series", "alias": "$tag_case",
+        "query": "SELECT percentile(\"value\",95) FROM \"scenario_duration_ms\" WHERE $timeFilter AND (\"case\"='slow' OR \"case\"='verySlow') GROUP BY \"case\"" }],
+      "fieldConfig": { "defaults": { "unit": "ms", "thresholds": { "mode": "absolute", "steps": [
+        { "color": "green", "value": null }, { "color": "red", "value": 7000 }
+      ] } }, "overrides": [] },
+      "options": { "colorMode": "background", "graphMode": "none", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false } }
+    },
+    {
+      "id": 4, "type": "stat", "title": "Internal HTTP 500 rate = 0",
+      "datasource": "myinfluxdb", "gridPos": { "h": 6, "w": 24, "x": 0, "y": 12 },
+      "targets": [{ "refId": "A", "rawQuery": true, "resultFormat": "time_series",
+        "query": "SELECT mean(\"value\") FROM \"internal_server_error_rate\" WHERE $timeFilter" }],
+      "fieldConfig": { "defaults": { "unit": "percentunit", "thresholds": { "mode": "absolute", "steps": [
+        { "color": "green", "value": null }, { "color": "red", "value": 0.000000001 }
+      ] } }, "overrides": [] },
+      "options": { "colorMode": "background", "graphMode": "none", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false } }
+    }
+  ]
+}

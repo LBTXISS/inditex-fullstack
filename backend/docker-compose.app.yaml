@@ -1,0 +1,29 @@
+# Local-only override: preserve supplied compose; isolate dependency URL and bindings.
+services:
+  yourapp:
+    image: inditex-similar-products:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:5000:5000"
+    environment:
+      SERVER_PORT: "5000"
+      CLIENTS_EXISTING_PRODUCTS_BASE_URL: "http://simulado:80"
+      METRICS_INFLUX_ENABLED: "true"
+      METRICS_INFLUX_URI: "http://influxdb:8086"
+    depends_on:
+      - simulado
+      - influxdb
+  simulado:
+    ports: !override
+      - "127.0.0.1:3001:80"
+  influxdb:
+    ports: !override
+      - "127.0.0.1:8086:8086"
+  grafana:
+    ports: !override
+      - "127.0.0.1:3000:3000"
+  k6:
+    volumes:
+      - ../Documentacion/evidencias/backend-contenedor:/evidence

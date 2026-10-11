@@ -1,0 +1,27 @@
+{
+  "id": null,
+  "uid": "itx-application",
+  "title": "Inditex - Application metrics (not k6)",
+  "schemaVersion": 30,
+  "version": 1,
+  "refresh": "10s",
+  "time": { "from": "now-15m", "to": "now" },
+  "panels": [
+    {
+      "id": 1, "type": "timeseries", "title": "Requests per 10s by HTTP status",
+      "datasource": "myinfluxdb", "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "targets": [{ "refId": "A", "rawQuery": true, "resultFormat": "time_series", "alias": "HTTP $tag_status",
+        "query": "SELECT sum(\"count\") FROM \"http_server_requests\" WHERE $timeFilter AND \"application\"='similar-products-service' AND \"uri\"='/product/{productId}/similar' GROUP BY time(10s),\"status\" fill(null)" }],
+      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } }
+    },
+    {
+      "id": 2, "type": "timeseries", "title": "JVM heap used by memory pool",
+      "datasource": "myinfluxdb", "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "targets": [{ "refId": "A", "rawQuery": true, "resultFormat": "time_series", "alias": "$tag_id",
+        "query": "SELECT mean(\"value\") FROM \"jvm_memory_used\" WHERE $timeFilter AND \"application\"='similar-products-service' AND \"area\"='heap' GROUP BY time(10s),\"id\" fill(null)" }],
+      "fieldConfig": { "defaults": { "unit": "bytes", "min": 0 }, "overrides": [] },
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } }
+    }
+  ]
+}

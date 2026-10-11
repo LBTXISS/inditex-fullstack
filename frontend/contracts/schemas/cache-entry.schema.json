@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:itx:cache-entry:v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "key", "storedAt", "expiresAt", "data"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "key": { "type": "string", "minLength": 1 },
+    "storedAt": { "type": "integer", "minimum": 0 },
+    "expiresAt": { "type": "integer", "minimum": 0 },
+    "data": {}
+  }
+}

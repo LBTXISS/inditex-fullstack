@@ -1,0 +1,731 @@
+﻿{
+    "formatVersion":  1,
+    "createdAtUtc":  "2026-10-07T10:08:38.3754028Z",
+    "files":  [
+                  {
+                      "path":  "assets/application-metrics.png",
+                      "bytes":  48742,
+                      "sha256":  "E2D0345705AB03484F50240D99A23CEF41BB7B3579C4DD7A5C6960941BC5DEAF"
+                  },
+                  {
+                      "path":  "assets/grafana-results.png",
+                      "bytes":  393032,
+                      "sha256":  "334790CDAEEDC927384877742F53769538080D52F788DBD2AF9E37712ABAC2B9"
+                  },
+                  {
+                      "path":  "backend/.dockerignore",
+                      "bytes":  61,
+                      "sha256":  "8836A415C8DB5653890EFF6F67EDE7EC53D305DE752ED7FF12CB90F6FFD8240A"
+                  },
+                  {
+                      "path":  "backend/.github/workflows/ci.yml",
+                      "bytes":  1425,
+                      "sha256":  "A3D5C205DD6DB2DF61D5981533030E2EC470343D48A095EA11AA6C82B64267B4"
+                  },
+                  {
+                      "path":  "backend/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "8B920A3D66916CDC824BC885747B4A7C2162BB2586D2425EA044C39614F85720"
+                  },
+                  {
+                      "path":  "backend/.mvn/wrapper/maven-wrapper.properties",
+                      "bytes":  259,
+                      "sha256":  "0CA928F6A95DEE6B3E24DEB3E664F39290229C9E3D16F37B5B7ED35376076BAF"
+                  },
+                  {
+                      "path":  "backend/assets/diagram.jpg",
+                      "bytes":  60666,
+                      "sha256":  "A83260C10EA10216CDC9A70A36D00DE3ADAAC1E8C5E6717F6032E5D6C541FEE8"
+                  },
+                  {
+                      "path":  "backend/contracts/.gitignore",
+                      "bytes":  14,
+                      "sha256":  "4D56952B0FB13BF8F9B6C13A6D4C34A075BAC3AF447636A1DF4335D7576E2F97"
+                  },
+                  {
+                      "path":  "backend/contracts/openapi/existing-products-consumer-v1.yaml",
+                      "bytes":  6235,
+                      "sha256":  "0EF64B03C05E7D7288434DDBD54721148B0925248C64A4A2EDE940824B523286"
+                  },
+                  {
+                      "path":  "backend/contracts/openapi/similar-products-api-v1.yaml",
+                      "bytes":  14015,
+                      "sha256":  "A1791F022AE701FD1BAF606A6A0E8797509DD42B3C380C7E4B82957E19C91E9B"
+                  },
+                  {
+                      "path":  "backend/contracts/package.json",
+                      "bytes":  367,
+                      "sha256":  "ADCDF366F5E14B733CCF6A6F714304502A9F4E6DAF2AE517DE0F96BE4616FD28"
+                  },
+                  {
+                      "path":  "backend/contracts/package-lock.json",
+                      "bytes":  1318,
+                      "sha256":  "F7BCAD026D9E299A6A1B13CE8E55F33A6C57A7526D7A83FE193EE8C29624436E"
+                  },
+                  {
+                      "path":  "backend/contracts/README.md",
+                      "bytes":  1706,
+                      "sha256":  "628FFF3BF0731919AA452088036D28BB9DD59B825D388540C444E19CDED3C2F3"
+                  },
+                  {
+                      "path":  "backend/contracts/redocly.yaml",
+                      "bytes":  237,
+                      "sha256":  "EB2EAEBC03BFFD0D2352A969DE9723CFB79BBF718B7D72A256324F9B43705E6F"
+                  },
+                  {
+                      "path":  "backend/docker-compose.app.yaml",
+                      "bytes":  760,
+                      "sha256":  "BC1F7A90D560383EA1C1EF6E314D6F15AFD535A12B29DA2CE1691202D26F7529"
+                  },
+                  {
+                      "path":  "backend/docker-compose.yaml",
+                      "bytes":  850,
+                      "sha256":  "1BAE1F862175412529DC7F0291F7566D2153D23CAF3357BB4F635107FE9A390E"
+                  },
+                  {
+                      "path":  "backend/Dockerfile",
+                      "bytes":  657,
+                      "sha256":  "68454A4414A0A52A0C945B15031E4AE376387CFE96F6BE6025C07FE469F91C45"
+                  },
+                  {
+                      "path":  "backend/existingApis.yaml",
+                      "bytes":  1893,
+                      "sha256":  "5E854FDC20CE650E894B0720FBB94E60F23C36456E257CDDDB0CC62BBACFB9EB"
+                  },
+                  {
+                      "path":  "backend/LICENSE",
+                      "bytes":  11558,
+                      "sha256":  "1EB85FC97224598DAD1852B5D6483BBCF0AA8608790DCC657A5A2A761AE9C8C6"
+                  },
+                  {
+                      "path":  "backend/mvnw",
+                      "bytes":  11790,
+                      "sha256":  "CAE96CEF89EBEA3531221F4AE17C23CF8EDF67D00EAE8306D4186AE1BBED4D02"
+                  },
+                  {
+                      "path":  "backend/mvnw.cmd",
+                      "bytes":  8481,
+                      "sha256":  "46EEDB8419BD14FE70D5BB2916D7B6F51806E51B39D5B76A42610384CA929C1C"
+                  },
+                  {
+                      "path":  "backend/pom.xml",
+                      "bytes":  3087,
+                      "sha256":  "28FB2B5E5E33E756F9564D63B2B093D6B78C5F0272E46DF2C345B50FE9E048ED"
+                  },
+                  {
+                      "path":  "backend/README.md",
+                      "bytes":  2791,
+                      "sha256":  "CC07DCB6E19BD9E8D8BA11E8B7C9665574F0C10CD6F81EC5EE435429D0F5D6B3"
+                  },
+                  {
+                      "path":  "backend/shared/grafana/dashboards/acceptance-dashboard.json",
+                      "bytes":  3287,
+                      "sha256":  "9C6EBF0B77E6CDD82CD860D7DB5DE377AD03B9880A01448A7514E9576E8AC3D2"
+                  },
+                  {
+                      "path":  "backend/shared/grafana/dashboards/application-metrics.json",
+                      "bytes":  1533,
+                      "sha256":  "170535A4B30E98F95A6B421D68FA0C018B825A0F35A0167DA31026911E594EA2"
+                  },
+                  {
+                      "path":  "backend/shared/grafana/dashboards/dashboard.yml",
+                      "bytes":  195,
+                      "sha256":  "879B19E08A95C0EB627C6CAAD242A65C63F54A38B5E3E1BBDAEE34ED5916F037"
+                  },
+                  {
+                      "path":  "backend/shared/grafana/dashboards/performance-test-dasboard.json",
+                      "bytes":  9892,
+                      "sha256":  "1E8B49BB029E779512DA7AEBDFDA223DE2D7EC1A91429AFD6959824DDAE87B05"
+                  },
+                  {
+                      "path":  "backend/shared/grafana/datasources/datasource.yml",
+                      "bytes":  176,
+                      "sha256":  "01E17048749513933F213FCB6BB8C841032214E895575B4921FEF02224E29F31"
+                  },
+                  {
+                      "path":  "backend/shared/k6/test.js",
+                      "bytes":  1444,
+                      "sha256":  "6D61646520B359BB09D199489CE8343891976D77ECEA89CB008AB35D1E64E4DD"
+                  },
+                  {
+                      "path":  "backend/shared/k6/test-acceptance-v1.js",
+                      "bytes":  9312,
+                      "sha256":  "7CEE39DC2F63DD52C680894712E80F0DC7F6CA13294C7B736F85FEC0BCFAF192"
+                  },
+                  {
+                      "path":  "backend/shared/simulado/mocks.json",
+                      "bytes":  2285,
+                      "sha256":  "534EA6E25D5EE357429448C3D4A8400F4126E018678B0AC49B721FD2592F7084"
+                  },
+                  {
+                      "path":  "backend/similarProducts.yaml",
+                      "bytes":  1272,
+                      "sha256":  "328C5B524BCF3BB53A0066328630CC4DB97A7C52EC3F6E8CB80612C5A8B22335"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/adapter/in/web/ApiErrorHandler.java",
+                      "bytes":  4255,
+                      "sha256":  "1BAB8FEAE2837FE49970880B48E1509DB232AB56BDD4698B7DC7B6CA5B1A285D"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/adapter/in/web/CorrelationIdWebFilter.java",
+                      "bytes":  1984,
+                      "sha256":  "8AB987C626F8862088AFB57F3200C125A475973CD5BE845A5C85A81C7D70B143"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/adapter/in/web/ProductDetailResponse.java",
+                      "bytes":  1089,
+                      "sha256":  "32A21485D4280621ED537F59E859E94EE4076403364C42E7B276A4A6AFA2D6EA"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/adapter/in/web/SimilarProductsController.java",
+                      "bytes":  1953,
+                      "sha256":  "7BD4BD3B8F9A30ED685DE54D8286B7AF43EF45F9FEBFF1698FDF205E6E51D38E"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/adapter/out/http/ExistingProductsClientProperties.java",
+                      "bytes":  3076,
+                      "sha256":  "16AA4BADC4FC5BAE854C282D5D4304A73363A81145AAFA110418F071ACAF8239"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/adapter/out/http/ExistingProductsHttpClientConfiguration.java",
+                      "bytes":  1343,
+                      "sha256":  "61591440892FA79C3A8CCDEB0325D547A5B25C6EF79DCE2545C3426E375598F4"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/adapter/out/http/ExistingProductsWebClientAdapter.java",
+                      "bytes":  10445,
+                      "sha256":  "10004E6ECE25EE9FA023FA7BC995A4BFE73DE4628BAC9ACB70AB13FEABFBDD98"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/adapter/out/http/SingleFlightProductCatalogAdapter.java",
+                      "bytes":  2312,
+                      "sha256":  "6B57B8186DE9D101529A3BCDF00CA85E599D828E8BF03C90DDC47F886C2EE55D"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/adapter/out/http/SingleFlightRegistry.java",
+                      "bytes":  2457,
+                      "sha256":  "8A99D2EF1E7D6B0BD2FE81203C5523CF3E89DA30A777CFE599886C8BC4DDC906"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/application/config/AggregationProperties.java",
+                      "bytes":  1300,
+                      "sha256":  "F2AFCB2C0E660BDB352C47F9C3AA69409FBB9AA2299012E2AB008774E135996A"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/application/error/FailureType.java",
+                      "bytes":  4075,
+                      "sha256":  "7ED2CF39B199CFB26C33361ECEF0064A32466CF8510BC84A1FA34C2B69ADA82C"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/application/error/SimilarProductsException.java",
+                      "bytes":  1386,
+                      "sha256":  "4955EA3E33E3A8207859B5AAB8AE7BBE8F6624ED22FD6C340F0E284F8CF11AC6"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/application/port/in/GetSimilarProductsUseCase.java",
+                      "bytes":  772,
+                      "sha256":  "1CC8AF57786CDDBAD5D69F2159E62B97B86CAB16962ED593675FF2FACC067C1A"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/application/port/out/ProductCatalogPort.java",
+                      "bytes":  1043,
+                      "sha256":  "42958F03AD1DB21EAC135B4A7B60A0C155A383D4C5B9895F3D1B1DCCE2E4BE36"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/application/service/GetSimilarProductsService.java",
+                      "bytes":  4822,
+                      "sha256":  "86310F7F5F22CB9CECA1ACBD4C32DE26DFD9B2757BEA75A4F661E502317540B5"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/domain/ProductDetail.java",
+                      "bytes":  1521,
+                      "sha256":  "0D03B279E2551A3C51CFEE7C018D07041D5D9581859998FD71A803EF8DE81C9E"
+                  },
+                  {
+                      "path":  "backend/src/main/java/com/inditex/similarproducts/SimilarProductsApplication.java",
+                      "bytes":  717,
+                      "sha256":  "7628BEE5922A2FCE94F1D105388C5A99106E4BBE7A9C8D26F42DB12BFE493A5E"
+                  },
+                  {
+                      "path":  "backend/src/main/resources/application.yml",
+                      "bytes":  1503,
+                      "sha256":  "40DFBAD549179229CABCF69C4C7901B07500B66924D49E336D87BE73203F714F"
+                  },
+                  {
+                      "path":  "backend/src/test/java/com/inditex/similarproducts/adapter/in/web/SimilarProductsControllerTest.java",
+                      "bytes":  14313,
+                      "sha256":  "D7CE159805D14C247ED5959B1AB9E7BDCDDBD14566135ED6DAF40377D1480886"
+                  },
+                  {
+                      "path":  "backend/src/test/java/com/inditex/similarproducts/adapter/out/http/ExistingProductsHttpBoundaryIntegrationTest.java",
+                      "bytes":  3634,
+                      "sha256":  "2D2FE83C38B5969F21EAB4B492B5A06EF937D7A94E9798B9D682FD7E4090AA84"
+                  },
+                  {
+                      "path":  "backend/src/test/java/com/inditex/similarproducts/adapter/out/http/ExistingProductsWebClientAdapterTest.java",
+                      "bytes":  12649,
+                      "sha256":  "084B0D6957162B7A1A337544562323F712F6596A995B1080C399348CA4B90591"
+                  },
+                  {
+                      "path":  "backend/src/test/java/com/inditex/similarproducts/adapter/out/http/SingleFlightRegistryTest.java",
+                      "bytes":  5245,
+                      "sha256":  "5A8EA40EEA361FB1F4E2F8C220E7014D76B77AA88565D8D0C64FC9F183433A5C"
+                  },
+                  {
+                      "path":  "backend/src/test/java/com/inditex/similarproducts/application/service/GetSimilarProductsServiceTest.java",
+                      "bytes":  11532,
+                      "sha256":  "3417D40803C685F31ACE5FFA007BF46FBFE6398276234511B8D29D7ED8C29F1A"
+                  },
+                  {
+                      "path":  "backend/src/test/java/com/inditex/similarproducts/ProvidedMockIntegrationTest.java",
+                      "bytes":  6021,
+                      "sha256":  "806D51307790103ADEE4B87189728748A63E6562DB0A8CA4B6EFCAA8BBDFC0DC"
+                  },
+                  {
+                      "path":  "Documentacion/ARQUITECTURA.md",
+                      "bytes":  6593,
+                      "sha256":  "C49A193815D4511063267B76FBC5F331594B314DE86A46E99EE08243267C2104"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/backend-contenedor/k6-aceptacion-senior.json",
+                      "bytes":  6726,
+                      "sha256":  "8E5F15061338F5CBEFB68E96D1CDFD6A93F291DF6A9DB89CB57DD94DA14D81E9"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/backend-contenedor/k6-original-senior.json",
+                      "bytes":  2681,
+                      "sha256":  "EAFBAFB79AFA241C65C79876C1FB186F53E78E6716BE1B90211E3AB94287F16A"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/cache-corrupta-recuperada.png",
+                      "bytes":  47813,
+                      "sha256":  "28349D2DE51280234CDE5C58AA206CAFEB8B512F4FBAC78B37BFB861C95D3ED1"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/cache-vencida-renovada.png",
+                      "bytes":  47813,
+                      "sha256":  "28349D2DE51280234CDE5C58AA206CAFEB8B512F4FBAC78B37BFB861C95D3ED1"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/carrito-confirmado.png",
+                      "bytes":  35232,
+                      "sha256":  "6327EF63F6D5582EDA8BF81ACF967C9FC93B1D09794C0C3C81529D8D96FD32AB"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/carrito-persistencia.png",
+                      "bytes":  34137,
+                      "sha256":  "ECD2FE2CB39B6A154A34C0E5949E994FC06349BA8B0418724318EACBF476CE6A"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/coverage-summary.json",
+                      "bytes":  7242,
+                      "sha256":  "32A50379408753C7568D93ADB39D134802FAE4603C00C18F905CC8F8C9DA706E"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/pdp-1280.png",
+                      "bytes":  38816,
+                      "sha256":  "339D4F9983E83CD597DA52AAFF0EC2EFEAC91C2DC9C197BAE4BE6EF666B021EA"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/pdp-390.png",
+                      "bytes":  34298,
+                      "sha256":  "B291261DDE05E63E697384AD5961A3830E6D90EC4867A5EFD265C04D4A9D9042"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/pdp-768.png",
+                      "bytes":  35605,
+                      "sha256":  "3186B5AE288E93039D86A6C578369DF77EC12297756BBC56E2124644BF8C5A38"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/pdp-loading.png",
+                      "bytes":  12086,
+                      "sha256":  "D0A397B60B28CDB1BD7A14323947D484E3B57176F36B0FB252B3BE21FFC0E590"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/pdp-seleccion-pendiente.png",
+                      "bytes":  38628,
+                      "sha256":  "8A5B0482EF9585B8AF3A7256C637782CEF45F18AA72F6EA16B9A767676140987"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/plp-1280.png",
+                      "bytes":  36915,
+                      "sha256":  "800B357A3F8A54C5391CDE8A82972B31C8B8106449A6281C06BA2F25A2BDE64B"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/plp-390.png",
+                      "bytes":  49832,
+                      "sha256":  "43207260FE51974D386E3B77D7208B4EA425099972EF9171C9FBAE526EF354D3"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/plp-768.png",
+                      "bytes":  33530,
+                      "sha256":  "A7A005950763B1F59BF32AA0479BCFADF167635A0922D07DF3CAE8650ADA8C94"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/plp-error.png",
+                      "bytes":  15793,
+                      "sha256":  "FAE097E0AA0CA62507B58350BC3B5E2BB43B15C96173F2BB741CCC87EFF2FE24"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/plp-filtro.png",
+                      "bytes":  22674,
+                      "sha256":  "24591162875D5EFD7ADB763B264C77DB5AD085E383690F79DCE6F1E2C0B0B487"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/plp-foco-teclado.png",
+                      "bytes":  35468,
+                      "sha256":  "825CFC85CDB7D60317B9FDA0F8748E43353CCDDCB5CF99326CB50F2949C03D34"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/plp-loading.png",
+                      "bytes":  20811,
+                      "sha256":  "1056126D21F8B9B674744F4C32BECACBA677182C3473F2B5DEC5BC1075B012C3"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/plp-reintento.png",
+                      "bytes":  50037,
+                      "sha256":  "32F059208115281BE6FF68F64B5ABC542E8FE16BE0CC74BCFD20189F9A73B5E6"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/plp-sin-resultados.png",
+                      "bytes":  22905,
+                      "sha256":  "59F37B9BECFCA4A1D76DB1F7E0AFE553D1178E2721C16E8A2529B16520C0DD5C"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/README.md",
+                      "bytes":  3768,
+                      "sha256":  "DE7E19E9422F1549FBD1EBB00239837AF21498390E7E7319E3CCAA960263FD0E"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/resultado.json",
+                      "bytes":  10156,
+                      "sha256":  "E2A6A31F80A19AFD47AA642559F4B22909D66290B8D70F38C7B5DDD2BB52EAB9"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/tests-coverage.png",
+                      "bytes":  52721,
+                      "sha256":  "1047DF9A428B43D4FF885EFD3D149EBCFF2A30382F5B8CE9CB2113F0E342E055"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/frontend/20261007-capturas/unit-results.xml",
+                      "bytes":  13757,
+                      "sha256":  "516F8FD6F7057DE78A789898995D0702E835B95A44C6D1B402440A60BA5E91B8"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/observabilidad/metrics-outage.json",
+                      "bytes":  569,
+                      "sha256":  "8112A2C7FE05E6B480E68989D91369D166297C7BE04FD860595921793C496E6D"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/observabilidad/metrics-recovery.json",
+                      "bytes":  19279,
+                      "sha256":  "2CEBA9610B4D965BF17F4A2484E98A329EC519434DDEAE64E0AED6ECA4A1A332"
+                  },
+                  {
+                      "path":  "Documentacion/evidencias/release/jacoco.xml",
+                      "bytes":  56157,
+                      "sha256":  "778C80477F05B53DEAF406D30DCADC5A305473E502A29E56D3D223CFEF15E224"
+                  },
+                  {
+                      "path":  "Documentacion/scripts/Verificar-Manifiesto.ps1",
+                      "bytes":  931,
+                      "sha256":  "A08969E44F8DF1DF5F0263CDCDDDFB32FBC2B4B531BACB79CFBD595CC396CB57"
+                  },
+                  {
+                      "path":  "Documentacion/specs/backend/ERRORES_Y_SLO_V1_1.md",
+                      "bytes":  3756,
+                      "sha256":  "DD5423E8914880AB499CE7849661D530191DC05732FBC704AEB75F6B9B7C5DF0"
+                  },
+                  {
+                      "path":  "Documentacion/specs/frontend/CONTRATOS_FRONTEND.md",
+                      "bytes":  5055,
+                      "sha256":  "9616FE4F6C7D6FA17F54F8BC5E3DBB6C98F64D6524CA8D404ACDAF5E7583C2B9"
+                  },
+                  {
+                      "path":  "EVALUADOR_LEEME.md",
+                      "bytes":  2979,
+                      "sha256":  "10A641161622E19C2BFB89B5084703DC79EC865E4037257CD05F030353B06532"
+                  },
+                  {
+                      "path":  "frontend/.env.example",
+                      "bytes":  87,
+                      "sha256":  "744BDE3D47A6AB48741568B65824A70E134B23237888D9D18D7736F16EE4A2FC"
+                  },
+                  {
+                      "path":  "frontend/.github/workflows/ci.yml",
+                      "bytes":  951,
+                      "sha256":  "78223BC59168E3965101954F4BD302A6B53CCD6E04222AF696105CBBA5766EE4"
+                  },
+                  {
+                      "path":  "frontend/.gitignore",
+                      "bytes":  47,
+                      "sha256":  "40E3DC3A4748A0A2141A1A8AAADAEDCAFAB054FFB796B5AF23FE6EEA767A9E7B"
+                  },
+                  {
+                      "path":  "frontend/contracts/schemas/cache-entry.schema.json",
+                      "bytes":  456,
+                      "sha256":  "4FB34AD3281792B0D46A09789A77939E4437DF3822BAA883467F4C430A60C24D"
+                  },
+                  {
+                      "path":  "frontend/contracts/schemas/cart-request.schema.json",
+                      "bytes":  335,
+                      "sha256":  "D6AFEFA493BEE4FF962BCE77B125BC60DB7CF5C488DCC91B1E214193704E498A"
+                  },
+                  {
+                      "path":  "frontend/contracts/schemas/cart-response.schema.json",
+                      "bytes":  279,
+                      "sha256":  "84DB5975F290492B6EF1A3BB6A243C077708A270FBAF5B68215D7D83E09CEBC0"
+                  },
+                  {
+                      "path":  "frontend/contracts/schemas/cart-storage.schema.json",
+                      "bytes":  419,
+                      "sha256":  "46D22BC89E0368E5B063417200E669657C8FAB3445D414D09E91FB9E765DB111"
+                  },
+                  {
+                      "path":  "frontend/contracts/schemas/product-detail-response.schema.json",
+                      "bytes":  1036,
+                      "sha256":  "47E943A3D200DA0FBF7A07BAC0F52EE4AD44D0396F3C6FAA00738F136B8F5EA8"
+                  },
+                  {
+                      "path":  "frontend/contracts/schemas/product-list-response.schema.json",
+                      "bytes":  503,
+                      "sha256":  "8E6801A570E366192B0B9B6D3BF958F895FF6D366DD46516AEAE2702A1CD3420"
+                  },
+                  {
+                      "path":  "frontend/eslint.config.js",
+                      "bytes":  919,
+                      "sha256":  "FBA3023F5A66CB65570D80E934B892CF471034F4C372A79EA040809801690B55"
+                  },
+                  {
+                      "path":  "frontend/index.html",
+                      "bytes":  392,
+                      "sha256":  "0E3EDE61F9016889C067467B27DD8C4681374963C053B5363928292E638F3642"
+                  },
+                  {
+                      "path":  "frontend/jsconfig.json",
+                      "bytes":  488,
+                      "sha256":  "9204E7232BB8E3564C3E17F48C561655448E95780D2C5405DF1AF8C7969DD76E"
+                  },
+                  {
+                      "path":  "frontend/package.json",
+                      "bytes":  1068,
+                      "sha256":  "20A5CACA531666305A8FB2D65661B54A632F02FF79BA0D6CF7D46840056E5DDC"
+                  },
+                  {
+                      "path":  "frontend/package-lock.json",
+                      "bytes":  140183,
+                      "sha256":  "EF08E4AF85EF28CACCBF213C2417D8CBC179EF3AC03684047D7BE4BC95044ACF"
+                  },
+                  {
+                      "path":  "frontend/README.md",
+                      "bytes":  1336,
+                      "sha256":  "76573635E619F82CAADD34B982156F1A75ABD7C5CF46512D29108C197829CB2D"
+                  },
+                  {
+                      "path":  "frontend/scripts/browser-acceptance.mjs",
+                      "bytes":  21423,
+                      "sha256":  "5D6CBFADBB21AA805DA47E193BF7549C5795D04378F2E22394E3A1A405ECD91E"
+                  },
+                  {
+                      "path":  "frontend/src/app/App.jsx",
+                      "bytes":  1448,
+                      "sha256":  "8CC6CAF14FE0A639FA51F33532F5D3779D6CCED0AECCB4975BAAECF6E4ED6DE6"
+                  },
+                  {
+                      "path":  "frontend/src/app/ErrorBoundary.jsx",
+                      "bytes":  1293,
+                      "sha256":  "BB6D3ED23AA7010C7F1851969766E2B1841D5797E15E9F01C60D13827A6C66D9"
+                  },
+                  {
+                      "path":  "frontend/src/app/ErrorBoundary.test.jsx",
+                      "bytes":  1303,
+                      "sha256":  "781F7DEB457C9206EEBEA6FCD400F82C351BB36FD28CEB96C4FB65745F47F773"
+                  },
+                  {
+                      "path":  "frontend/src/app/Header.jsx",
+                      "bytes":  1235,
+                      "sha256":  "69F0C794DA7666C10D0DABB4400339638980E0873310DEAD720D41C6082E8B32"
+                  },
+                  {
+                      "path":  "frontend/src/features/cart/cartStore.js",
+                      "bytes":  3386,
+                      "sha256":  "C24817E472065B50DC5F268B85586781F43E3A26E1F6444D22EC9792D899040E"
+                  },
+                  {
+                      "path":  "frontend/src/features/cart/cartStore.test.js",
+                      "bytes":  3748,
+                      "sha256":  "D344F47475E52F9AA2036D526F1A8AEF52CB5E9111107573AA68C67ADCDDE2EF"
+                  },
+                  {
+                      "path":  "frontend/src/features/cart/useCart.js",
+                      "bytes":  411,
+                      "sha256":  "A1E47417F7A20CC4C5F49419EF94DC88C2E5CDEE05B1BEE79DCEA1852BD4A51E"
+                  },
+                  {
+                      "path":  "frontend/src/features/catalog/CatalogPage.jsx",
+                      "bytes":  2806,
+                      "sha256":  "34EFF11FABC873CE1F6A3FFD3522162FE0B17096920F6B04F580D728BBD989A8"
+                  },
+                  {
+                      "path":  "frontend/src/features/catalog/CatalogPage.test.jsx",
+                      "bytes":  2402,
+                      "sha256":  "1AD16BB68D2641165F7D81DB50B9A8172A3D7434546F02FF4B848A5A4EF52251"
+                  },
+                  {
+                      "path":  "frontend/src/features/catalog/catalogRepository.js",
+                      "bytes":  1895,
+                      "sha256":  "E8D0D7E7EDD8262AD0AF6346FE64EC7E8A2C4BACC559C67C90F295783C0919EA"
+                  },
+                  {
+                      "path":  "frontend/src/features/catalog/catalogRepository.test.js",
+                      "bytes":  3163,
+                      "sha256":  "D1B69B5365E4209D2F58CB93964D925CD6DB049493A7D9728B21DA1BFE098C54"
+                  },
+                  {
+                      "path":  "frontend/src/features/catalog/ProductDetailPage.jsx",
+                      "bytes":  6042,
+                      "sha256":  "172D373ECAFE4A49FF83A62E25946CD59351996A77D5B6EF56C988F2B5B8B8EA"
+                  },
+                  {
+                      "path":  "frontend/src/features/catalog/ProductDetailPage.test.jsx",
+                      "bytes":  11586,
+                      "sha256":  "A84612DDB77B8C11782E12880248829D3E0DA01E351C9A8376D8039A2D7DBAFE"
+                  },
+                  {
+                      "path":  "frontend/src/main.jsx",
+                      "bytes":  615,
+                      "sha256":  "C7B1A6EF83125C00EBC3FB10307553435EAD701A6F888C2EAB81A811691674FC"
+                  },
+                  {
+                      "path":  "frontend/src/shared/api/client.js",
+                      "bytes":  4256,
+                      "sha256":  "2773DB8CB96130A6B7EEC6F5E51B912FBAB405C41ECC545DF7FB067BDA442BB9"
+                  },
+                  {
+                      "path":  "frontend/src/shared/api/client.test.js",
+                      "bytes":  5027,
+                      "sha256":  "CEB7FD093F8A733526D3FFC02DF2048BBCE7BE0BFF05BC4A7D070EDDCF81D76B"
+                  },
+                  {
+                      "path":  "frontend/src/shared/api/contracts.js",
+                      "bytes":  1666,
+                      "sha256":  "CCA0C999E6D8C6BCB002F28D615683F5B8A94C8871FB0147292323F566E897C7"
+                  },
+                  {
+                      "path":  "frontend/src/shared/api/detailNormalizer.js",
+                      "bytes":  4232,
+                      "sha256":  "4C97A5E0B0C80E623BB62BFA84B702BDE37DC64FC4E7B25B3FB8586323D2E36D"
+                  },
+                  {
+                      "path":  "frontend/src/shared/api/detailNormalizer.test.js",
+                      "bytes":  4785,
+                      "sha256":  "7632A8B41153A13EA5F92CDB7287F5A5BD5F9268A0DCD16833E95EC5E95DD8A6"
+                  },
+                  {
+                      "path":  "frontend/src/shared/api/errors.js",
+                      "bytes":  586,
+                      "sha256":  "A24CCA22B6E484532FDDF79A3AABDC1FE3C748DD48DCCD6256A220B443A2718D"
+                  },
+                  {
+                      "path":  "frontend/src/shared/api/normalizers.js",
+                      "bytes":  2731,
+                      "sha256":  "B357649CF2DFB4C51E8F4F47BB17EF032D7C0A918A4ABC1FC43A4AB5E748081C"
+                  },
+                  {
+                      "path":  "frontend/src/shared/api/normalizers.test.js",
+                      "bytes":  1578,
+                      "sha256":  "7441FF60E35DF404DC61BD1F837814C6DEA6323BFAC51850C39BE39F8FFEC9FE"
+                  },
+                  {
+                      "path":  "frontend/src/shared/cache/browserStorage.js",
+                      "bytes":  235,
+                      "sha256":  "7874D25ED899D81E9655F0A70147ED34C9338929D6BF1830F38AB544DF4AB896"
+                  },
+                  {
+                      "path":  "frontend/src/shared/cache/cacheManager.js",
+                      "bytes":  5491,
+                      "sha256":  "0F134016D789E196B62F7735CFAAB42A997DA5149C7DA15C41BE5256E0F1D633"
+                  },
+                  {
+                      "path":  "frontend/src/shared/cache/cacheManager.test.js",
+                      "bytes":  8296,
+                      "sha256":  "1034DC24A8AD97FE14C85C7261F23547536A1AEF94C5B027776FCC3E774123D9"
+                  },
+                  {
+                      "path":  "frontend/src/shared/cache/useCachedResource.js",
+                      "bytes":  2922,
+                      "sha256":  "A2643C8F9E911D1DB070C62313E71C04C09CEB8F7D357F41BFFFEBDABF699596"
+                  },
+                  {
+                      "path":  "frontend/src/shared/cache/useCachedResource.test.jsx",
+                      "bytes":  3813,
+                      "sha256":  "90CDF6E50F095126A20C561A0B8CEBB22077D5A379057B45CF7841368FD93491"
+                  },
+                  {
+                      "path":  "frontend/src/shared/config/runtimeConfig.js",
+                      "bytes":  1591,
+                      "sha256":  "32D11456E7126AA6E48EC2D92A3839CF6A56047BAF23C4384434C5479F4B3038"
+                  },
+                  {
+                      "path":  "frontend/src/shared/config/runtimeConfig.test.js",
+                      "bytes":  1902,
+                      "sha256":  "66FE748B6DBC817DEF991B0AF599B3AC5A4A3430137189F58D26FDDABBC555FA"
+                  },
+                  {
+                      "path":  "frontend/src/shared/ui/LoadingSkeleton.jsx",
+                      "bytes":  972,
+                      "sha256":  "75E293CA975FC6540CFA051F3A5843D9A9AA83F4A9A99B49DA9BE0F5662D1CE2"
+                  },
+                  {
+                      "path":  "frontend/src/shared/ui/LoadingSkeleton.test.jsx",
+                      "bytes":  1085,
+                      "sha256":  "8134872D7A3DC8C4AA5BF5CA8155766F6F0B34DA5AD36C479149BD792BE131A1"
+                  },
+                  {
+                      "path":  "frontend/src/shared/ui/ProductImage.jsx",
+                      "bytes":  938,
+                      "sha256":  "BE8FA544734A4D45138C662176FBBF28075E8E8F5C66FDBEFDE5B66B2247AD5B"
+                  },
+                  {
+                      "path":  "frontend/src/shared/ui/ProductImage.test.jsx",
+                      "bytes":  762,
+                      "sha256":  "395258D32F0CCBDC324F725AEB28715D994FC7D4F6FB9137EF5A0853A1852136"
+                  },
+                  {
+                      "path":  "frontend/src/styles.css",
+                      "bytes":  5206,
+                      "sha256":  "BABD0F9ACC7FE7BDD3E8E098C758A0312FF4A61EA211C5FF573230598F89CC57"
+                  },
+                  {
+                      "path":  "frontend/src/test/memoryStorage.js",
+                      "bytes":  532,
+                      "sha256":  "8A218D97EDDEBCA0F15A946A3C119A47DCCB36B853B9FD587DF686B4B7615642"
+                  },
+                  {
+                      "path":  "frontend/src/test/productFixtures.js",
+                      "bytes":  582,
+                      "sha256":  "A2C1B76FD44D1CA3945EA12F0A3D2B3CCABCED15CDEF3BD5E5E74E80941A24A3"
+                  },
+                  {
+                      "path":  "frontend/src/test/setup.js",
+                      "bytes":  230,
+                      "sha256":  "C7CAD9934975E429EBA14C8D5A49E4CB0F071310F351C97359A98ECEA6652CDE"
+                  },
+                  {
+                      "path":  "frontend/vite.config.js",
+                      "bytes":  539,
+                      "sha256":  "54B82B9F7C1D1E10F9906F253C357F277A013A21483F298A23D85BE627AC37BA"
+                  },
+                  {
+                      "path":  "README.md",
+                      "bytes":  622,
+                      "sha256":  "C7EED8328B16D1411DBCE7D6F26BCAA6244597248EB84E74071FF7F34A44A288"
+                  },
+                  {
+                      "path":  "TESTING_Y_METRICAS.md",
+                      "bytes":  8335,
+                      "sha256":  "83EE480AEA1B64B01B397D8808E65D87BFD27DC7A905DD1B0AA576558FD58B1D"
+                  }
+              ]
+}

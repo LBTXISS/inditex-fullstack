@@ -1,0 +1,49 @@
+server:
+  port: 5000
+
+spring:
+  application:
+    name: similar-products-service
+
+clients:
+  existing-products:
+    base-url: http://localhost:3001
+    max-response-size: 256KB
+    # Acotar conexión y lista de IDs evita consumir todo el plazo antes del fan-out.
+    connect-timeout: 1s
+    similar-ids-timeout: 1s
+    # Admite el fixture de 5 s; cancela el de 50 s y devuelve 504, no un éxito parcial.
+    detail-timeout: 6s
+    # Bulkhead de transporte compartido: conexiones y cola finitas bajo concurrencia k6.
+    max-connections: 16
+    pending-acquire-max-count: 64
+    # La falta de capacidad se traduce a sobrecarga 503 sin espera ilimitada.
+    pending-acquire-timeout: 300ms
+
+aggregation:
+  # Fan-out por agregado; flatMapSequential mantiene el orden del proveedor.
+  detail-concurrency: 8
+  # Plazo global incluyendo IDs, espera del pool y varias tandas de detalles.
+  request-deadline: 6500ms
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+  metrics:
+    tags:
+      # Etiqueta constante; no añadir IDs ni correlaciones de alta cardinalidad.
+      application: ${spring.application.name}
+  influx:
+    metrics:
+      export:
+        # Opt-in: tests and standalone runs must not depend on a metrics backend.
+        enabled: ${METRICS_INFLUX_ENABLED:false}
+        api-version: v1
+        uri: ${METRICS_INFLUX_URI:http://localhost:8086}
+        db: k6
+        auto-create-db: false
+        step: 10s
+        connect-timeout: 1s
+        read-timeout: 2s

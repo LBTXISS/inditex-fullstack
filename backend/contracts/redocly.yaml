@@ -1,0 +1,7 @@
+extends:
+  - recommended
+
+rules:
+  # The supplied test environment is contractually bound to localhost ports 5000/3001.
+  # Disabling this single generic rule is preferable to publishing a fictitious server.
+  no-server-example.com: off

@@ -1,0 +1,27 @@
+{
+  "executedAtUtc": "2026-10-07T07:35:07.345Z",
+  "outcome": "passed",
+  "scope": "InfluxDB confirmed unavailable; publisher enabled; business responses unaffected",
+  "results": [
+    {
+      "productId": "1",
+      "status": 200,
+      "elapsedMs": 112.98459999999977
+    },
+    {
+      "productId": "1",
+      "status": 200,
+      "elapsedMs": 106.15490000000136
+    },
+    {
+      "productId": "1",
+      "status": 200,
+      "elapsedMs": 105.13910000000033
+    },
+    {
+      "productId": "3",
+      "status": 504,
+      "elapsedMs": 6005.823999999997
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "status": "PASS",
+  "executedAt": "2026-10-07T09:35:39.741Z",
+  "browser": "154.0.8037.98",
+  "checks": [
+    "PLP: 8 productos, filtro sin red, skip-link/teclado, 4/3/1 columnas y sin overflow en 1280/768/390",
+    "PDP: ruta SPA sin recarga, main con foco, opciones/submit con teclado, POST exacto, count=12, recarga profunda con caché y persistencia",
+    "Skeletons PLP/PDP con red pendiente: un status por vista, sin controles ficticios, reduced-motion sin animación",
+    "Storage: JSON corrupto y TTL vencido fuerzan GET nuevos; contador de carrito preservado",
+    "HTTP500 simulado: error accesible sin stale y reintento correcto; sin POST adicionales",
+    "Sin errores inesperados de consola/pageerror; contraste eyebrow >=4.5:1; JS gzip <=150 kB y CSS gzip <=5 kB"
+  ],
+  "requests": {
+    "list": 5,
+    "detail": 1,
+    "post": 1
+  },
+  "jsGzip": 124825,
+  "cssGzip": 1589,
+  "errors": [],
+  "expectedConsoleErrors": [
+    "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+  ],
+  "screenshots": [
+    {
+      "filename": "plp-loading.png",
+      "capturedAt": "2026-10-07T09:35:38.359Z",
+      "url": "http://127.0.0.1:4173/products",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "4 skeletons",
+        "un status",
+        "sin controles ficticios",
+        "reduced-motion sin animación"
+      ],
+      "bytes": 20811,
+      "sha256": "1056126d21f8b9b674744f4c32becacba677182c3473f2b5dec5bc1075b012c3"
+    },
+    {
+      "filename": "plp-foco-teclado.png",
+      "capturedAt": "2026-10-07T09:35:38.452Z",
+      "url": "http://127.0.0.1:4173/products#main-content",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "skip-link activado con teclado",
+        "foco en main-content"
+      ],
+      "bytes": 35468,
+      "sha256": "825cfc85cdb7d60317b9fda0f8748e43353ccddcb5cf99326cb50f2949c03d34"
+    },
+    {
+      "filename": "plp-filtro.png",
+      "capturedAt": "2026-10-07T09:35:38.483Z",
+      "url": "http://127.0.0.1:4173/products#main-content",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "búsqueda Dispositivo 1: una tarjeta",
+        "GET de lista sigue en 1"
+      ],
+      "bytes": 22674,
+      "sha256": "24591162875d5efd7adb763b264c77db5ad085e383690f79dce6f1e2c0b0b487"
+    },
+    {
+      "filename": "plp-sin-resultados.png",
+      "capturedAt": "2026-10-07T09:35:38.517Z",
+      "url": "http://127.0.0.1:4173/products#main-content",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "mensaje de filtro vacío",
+        "cero tarjetas",
+        "sin GET adicional"
+      ],
+      "bytes": 22905,
+      "sha256": "59f37b9becfca4a1d76db1f7e0afe553d1178e2721c16e8a2529b16520c0dd5c"
+    },
+    {
+      "filename": "plp-1280.png",
+      "capturedAt": "2026-10-07T09:35:38.563Z",
+      "url": "http://127.0.0.1:4173/products#main-content",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "8 productos: 4 columnas",
+        "sin overflow horizontal"
+      ],
+      "bytes": 36915,
+      "sha256": "800b357a3f8a54c5391cde8a82972b31c8b8106449a6281c06ba2f25a2bde64b"
+    },
+    {
+      "filename": "plp-768.png",
+      "capturedAt": "2026-10-07T09:35:38.601Z",
+      "url": "http://127.0.0.1:4173/products#main-content",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "8 productos: 3 columnas",
+        "sin overflow horizontal"
+      ],
+      "bytes": 33530,
+      "sha256": "a7a005950763b1f59bf32aa0479bcfadf167635a0922d07df3cae8650ada8c94"
+    },
+    {
+      "filename": "plp-390.png",
+      "capturedAt": "2026-10-07T09:35:38.668Z",
+      "url": "http://127.0.0.1:4173/products#main-content",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "8 productos: 1 columnas",
+        "sin overflow horizontal"
+      ],
+      "bytes": 49832,
+      "sha256": "43207260fe51974d386e3b77d7208b4ea425099972ef9171c9fbae526ef354d3"
+    },
+    {
+      "filename": "pdp-loading.png",
+      "capturedAt": "2026-10-07T09:35:38.712Z",
+      "url": "http://127.0.0.1:4173/product/device_1",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "2 skeletons",
+        "un status mientras el detalle sigue pendiente"
+      ],
+      "bytes": 12086,
+      "sha256": "d0a397b60b28cdb1bd7a14323947d484e3b57176f36b0fb252b3be21ffc0e590"
+    },
+    {
+      "filename": "pdp-seleccion-pendiente.png",
+      "capturedAt": "2026-10-07T09:35:38.785Z",
+      "url": "http://127.0.0.1:4173/product/device_1",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "submit deshabilitado sin color",
+        "unidades de pantalla normalizadas",
+        "navegación SPA sin recarga"
+      ],
+      "bytes": 38628,
+      "sha256": "8a5b0482ef9585b8af3a7256c637782cef45f18aa72f6ea16b9a767676140987"
+    },
+    {
+      "filename": "pdp-1280.png",
+      "capturedAt": "2026-10-07T09:35:38.833Z",
+      "url": "http://127.0.0.1:4173/product/device_1",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "2 columnas",
+        "sin overflow",
+        "colorCode=0 seleccionado",
+        "storageCode=2000"
+      ],
+      "bytes": 38816,
+      "sha256": "339d4f9983e83cd597da52aaff0ec2efeac91c2dc9c197bae4be6ef666b021ea"
+    },
+    {
+      "filename": "pdp-768.png",
+      "capturedAt": "2026-10-07T09:35:38.871Z",
+      "url": "http://127.0.0.1:4173/product/device_1",
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "2 columnas",
+        "sin overflow",
+        "colorCode=0 seleccionado",
+        "storageCode=2000"
+      ],
+      "bytes": 35605,
+      "sha256": "3186b5ae288e93039d86a6c578369df77ec12297756bbc56e2124644bf8c5a38"
+    },
+    {
+      "filename": "pdp-390.png",
+      "capturedAt": "2026-10-07T09:35:38.911Z",
+      "url": "http://127.0.0.1:4173/product/device_1",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "1 columnas",
+        "sin overflow",
+        "colorCode=0 seleccionado",
+        "storageCode=2000"
+      ],
+      "bytes": 34298,
+      "sha256": "b291261dde05e63e697384ad5961a3830e6d90ec4867a5efd265c04d4a9d9042"
+    },
+    {
+      "filename": "carrito-confirmado.png",
+      "capturedAt": "2026-10-07T09:35:38.973Z",
+      "url": "http://127.0.0.1:4173/product/device_1",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "POST simulado único y payload exacto",
+        "mensaje de éxito",
+        "count confirmado=12"
+      ],
+      "bytes": 35232,
+      "sha256": "6327ef63f6d5582eda8bf81acf967c9fc93b1d09794c0c3c81529d8d96fd32ab"
+    },
+    {
+      "filename": "carrito-persistencia.png",
+      "capturedAt": "2026-10-07T09:35:39.063Z",
+      "url": "http://127.0.0.1:4173/product/device_1",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "count=12 tras recarga profunda",
+        "detalle servido desde caché: GET sigue en 1"
+      ],
+      "bytes": 34137,
+      "sha256": "ecd2fe2cb39b6a154a34c0e5949e994fc06349ba8b0418724318eacbf476ce6a"
+    },
+    {
+      "filename": "cache-corrupta-recuperada.png",
+      "capturedAt": "2026-10-07T09:35:39.199Z",
+      "url": "http://127.0.0.1:4173/products",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "JSON corrupto invalidado",
+        "lista recargada: GET=2",
+        "carrito conserva count=12"
+      ],
+      "bytes": 47813,
+      "sha256": "28349d2de51280234cde5c58aa206cafeb8b512f4fbac78b37bfb861c95d3ed1"
+    },
+    {
+      "filename": "cache-vencida-renovada.png",
+      "capturedAt": "2026-10-07T09:35:39.301Z",
+      "url": "http://127.0.0.1:4173/products",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "TTL vencido fuerza GET=3",
+        "nueva entrada con TTL absoluto de 3600 s"
+      ],
+      "bytes": 47813,
+      "sha256": "28349d2de51280234cde5c58aa206cafeb8b512f4fbac78b37bfb861c95d3ed1"
+    },
+    {
+      "filename": "plp-error.png",
+      "capturedAt": "2026-10-07T09:35:39.382Z",
+      "url": "http://127.0.0.1:4173/products",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "HTTP500 simulado",
+        "alert visible",
+        "sin tarjetas stale",
+        "reintento disponible"
+      ],
+      "bytes": 15793,
+      "sha256": "fae097e0aa0ca62507b58350bc3b5e2bb43b15c96173f2bb741ccc87eff2fe24"
+    },
+    {
+      "filename": "plp-reintento.png",
+      "capturedAt": "2026-10-07T09:35:39.495Z",
+      "url": "http://127.0.0.1:4173/products",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "GET=5 tras reintento explícito",
+        "8 productos restaurados",
+        "carrito conserva count=12"
+      ],
+      "bytes": 50037,
+      "sha256": "32f059208115281be6ff68f64b5abc542e8fe16be0cc74bcfd20189f9a73b5e6"
+    },
+    {
+      "filename": "tests-coverage.png",
+      "capturedAt": "2026-10-07T09:35:39.726Z",
+      "url": "file:///D:/MEGA/Busqueda_Trabajo/Prueba_Inditex/DemoDefensaInditex/frontend/coverage/index.html",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "verifiedChecks": [
+        "informe HTML real de cobertura V8",
+        "resumen All files"
+      ],
+      "bytes": 52721,
+      "sha256": "1047df9a428b43d4ff885efd3d149ebcff2a30382f5b8ce9cb2113f0e342e055"
+    }
+  ],
+  "coverageSummarySha256": "32a50379408753c7568d93adb39d134802fae4603c00c18f905cc8f8c9da706e",
+  "scope": "Chrome local, preview producción, API/imágenes/POST simulados; TTL envejecido por metadatos; no WCAG integral ni smoke remoto"
+}

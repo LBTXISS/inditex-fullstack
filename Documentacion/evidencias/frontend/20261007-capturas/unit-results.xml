@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="58" failures="0" errors="0" time="0.9167631">
+    <testsuite name="src/app/ErrorBoundary.test.jsx" timestamp="2026-10-07T09:31:40.249Z" hostname="LBT" tests="1" failures="0" errors="0" skipped="0" time="0.07483">
+        <testcase classname="src/app/ErrorBoundary.test.jsx" name="recovers a render exception with safe navigation without deleting storage" time="0.073774">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/features/cart/cartStore.test.js" timestamp="2026-10-07T09:31:40.250Z" hostname="LBT" tests="4" failures="0" errors="0" skipped="0" time="0.0706237">
+        <testcase classname="src/features/cart/cartStore.test.js" name="CartStore &gt; restores only a valid versioned count" time="0.0018691">
+        </testcase>
+        <testcase classname="src/features/cart/cartStore.test.js" name="CartStore &gt; uses the authoritative server count and persists it" time="0.0014006">
+        </testcase>
+        <testcase classname="src/features/cart/cartStore.test.js" name="CartStore &gt; serializes additions and never applies responses out of order" time="0.0652501">
+        </testcase>
+        <testcase classname="src/features/cart/cartStore.test.js" name="CartStore &gt; does not change count when the response contract is invalid" time="0.0008889">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/features/catalog/CatalogPage.test.jsx" timestamp="2026-10-07T09:31:40.250Z" hostname="LBT" tests="2" failures="0" errors="0" skipped="0" time="0.1467775">
+        <testcase classname="src/features/catalog/CatalogPage.test.jsx" name="CatalogPage &gt; loads products, filters locally and presents unavailable price" time="0.1075969">
+        </testcase>
+        <testcase classname="src/features/catalog/CatalogPage.test.jsx" name="CatalogPage &gt; offers a retry after a failed load" time="0.0377105">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/features/catalog/ProductDetailPage.test.jsx" timestamp="2026-10-07T09:31:40.251Z" hostname="LBT" tests="8" failures="0" errors="0" skipped="0" time="0.3959798">
+        <testcase classname="src/features/catalog/ProductDetailPage.test.jsx" name="PDP and cart integration &gt; resets selections when the one-hour revalidation changes available options" time="0.0513876">
+        </testcase>
+        <testcase classname="src/features/catalog/ProductDetailPage.test.jsx" name="PDP and cart integration &gt; preselects unique options including code zero, sends once, restores authoritative count and returns to PLP" time="0.1180351">
+        </testcase>
+        <testcase classname="src/features/catalog/ProductDetailPage.test.jsx" name="PDP and cart integration &gt; requires explicit choice for multiple options and blocks empty choices" time="0.0238764">
+        </testcase>
+        <testcase classname="src/features/catalog/ProductDetailPage.test.jsx" name="PDP and cart integration &gt; shows both selectors but cannot add when there are no available options" time="0.0289965">
+        </testcase>
+        <testcase classname="src/features/catalog/ProductDetailPage.test.jsx" name="PDP and cart integration &gt; preserves count on failed POST without automatic retry, then accepts a smaller count" time="0.0733895">
+        </testcase>
+        <testcase classname="src/features/catalog/ProductDetailPage.test.jsx" name="PDP and cart integration &gt; retries failed GET and renders image fallback" time="0.0271606">
+        </testcase>
+        <testcase classname="src/features/catalog/ProductDetailPage.test.jsx" name="PDP and cart integration &gt; does not let late detail A overwrite B after rapid navigation" time="0.0166951">
+        </testcase>
+        <testcase classname="src/features/catalog/ProductDetailPage.test.jsx" name="PDP and cart integration &gt; updates global cart after navigation without leaking old success into B" time="0.0548107">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/features/catalog/catalogRepository.test.js" timestamp="2026-10-07T09:31:40.251Z" hostname="LBT" tests="2" failures="0" errors="0" skipped="0" time="0.0130035">
+        <testcase classname="src/features/catalog/catalogRepository.test.js" name="Catalog repository detail cache &gt; separates list and IDs, restores persisted detail, and expires at one hour" time="0.0088725">
+        </testcase>
+        <testcase classname="src/features/catalog/catalogRepository.test.js" name="Catalog repository detail cache &gt; rejects mismatched IDs and ambiguous detail without caching them" time="0.0029455">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/shared/api/client.test.js" timestamp="2026-10-07T09:31:40.252Z" hostname="LBT" tests="8" failures="0" errors="0" skipped="0" time="0.023515">
+        <testcase classname="src/shared/api/client.test.js" name="API boundary &gt; preserves the global receiver required by native browser fetch" time="0.0047225">
+        </testcase>
+        <testcase classname="src/shared/api/client.test.js" name="API boundary &gt; rejects an invalid command before making a network request" time="0.0016765">
+        </testcase>
+        <testcase classname="src/shared/api/client.test.js" name="API boundary &gt; validates and normalizes the list with credentials omitted" time="0.0010562">
+        </testcase>
+        <testcase classname="src/shared/api/client.test.js" name="API boundary &gt; rejects an invalid HTTP response" time="0.0003676">
+        </testcase>
+        <testcase classname="src/shared/api/client.test.js" name="API boundary &gt; rejects an invalid JSON response" time="0.0002959">
+        </testcase>
+        <testcase classname="src/shared/api/client.test.js" name="API boundary &gt; rejects an invalid schema response" time="0.0003335">
+        </testcase>
+        <testcase classname="src/shared/api/client.test.js" name="API boundary &gt; aborts a hung request within the configured timeout" time="0.0122455">
+        </testcase>
+        <testcase classname="src/shared/api/client.test.js" name="API boundary &gt; encodes opaque IDs and sends the exact cart command" time="0.0015362">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/shared/api/detailNormalizer.test.js" timestamp="2026-10-07T09:31:40.252Z" hostname="LBT" tests="5" failures="0" errors="0" skipped="0" time="0.0060846">
+        <testcase classname="src/shared/api/detailNormalizer.test.js" name="Product detail normalization &gt; corrects proven display inversions and preserves canonical data" time="0.0030792">
+        </testcase>
+        <testcase classname="src/shared/api/detailNormalizer.test.js" name="Product detail normalization &gt; does not guess incomplete contradictory display fields" time="0.0003243">
+        </testcase>
+        <testcase classname="src/shared/api/detailNormalizer.test.js" name="Product detail normalization &gt; maps aliases, arrays and unavailable data into safe text" time="0.0004469">
+        </testcase>
+        <testcase classname="src/shared/api/detailNormalizer.test.js" name="Product detail normalization &gt; prefers corrected nonempty aliases and never renders an object" time="0.0002786">
+        </testcase>
+        <testcase classname="src/shared/api/detailNormalizer.test.js" name="Product detail normalization &gt; rejects duplicate option codes and invalid persisted models" time="0.0007052">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/shared/api/normalizers.test.js" timestamp="2026-10-07T09:31:40.253Z" hostname="LBT" tests="2" failures="0" errors="0" skipped="0" time="0.0033726">
+        <testcase classname="src/shared/api/normalizers.test.js" name="product normalizers &gt; keeps opaque IDs and represents missing price without inventing currency" time="0.0018682">
+        </testcase>
+        <testcase classname="src/shared/api/normalizers.test.js" name="product normalizers &gt; filters brand and model locally ignoring case and diacritics" time="0.0003795">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/shared/cache/cacheManager.test.js" timestamp="2026-10-07T09:31:40.253Z" hostname="LBT" tests="12" failures="0" errors="0" skipped="0" time="0.0086212">
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; removes malformed JSON even if revalidation fails" time="0.0032368">
+        </testcase>
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; rejects independently invalid persistent entries: {&quot;schemaVersion&quot;:2}" time="0.001038">
+        </testcase>
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; rejects independently invalid persistent entries: {&quot;storedAt&quot;:2000,&quot;expiresAt&quot;:3602000}" time="0.0002225">
+        </testcase>
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; rejects independently invalid persistent entries: {&quot;expiresAt&quot;:3601001}" time="0.0001467">
+        </testcase>
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; rejects independently invalid persistent entries: {&quot;key&quot;:&quot;different&quot;}" time="0.0001236">
+        </testcase>
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; rejects independently invalid persistent entries: {&quot;data&quot;:{&quot;id&quot;:5}}" time="0.0001111">
+        </testcase>
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; does not restore GET v1 models and leaves cart persistence intact" time="0.0003413">
+        </testcase>
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; uses an absolute TTL and revalidates exactly at one hour" time="0.0004323">
+        </testcase>
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; coalesces concurrent misses and removes the in-flight promise afterwards" time="0.0004202">
+        </testcase>
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; does not cache failures and retries on the next request" time="0.0005768">
+        </testcase>
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; treats corrupt, future and overlong entries as misses" time="0.0003755">
+        </testcase>
+        <testcase classname="src/shared/cache/cacheManager.test.js" name="CacheManager &gt; degrades to memory when persistent storage throws" time="0.000327">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/shared/cache/useCachedResource.test.jsx" timestamp="2026-10-07T09:31:40.254Z" hostname="LBT" tests="3" failures="0" errors="0" skipped="0" time="0.0273803">
+        <testcase classname="src/shared/cache/useCachedResource.test.jsx" name="hides expired data and revalidates while the component remains mounted" time="0.0195622">
+        </testcase>
+        <testcase classname="src/shared/cache/useCachedResource.test.jsx" name="revalidates on resume after suspension, coalesces events and cleans listeners" time="0.0036527">
+        </testcase>
+        <testcase classname="src/shared/cache/useCachedResource.test.jsx" name="invalidates on focus if the wall clock moves before storedAt" time="0.0029867">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/shared/config/runtimeConfig.test.js" timestamp="2026-10-07T09:31:40.255Z" hostname="LBT" tests="8" failures="0" errors="0" skipped="0" time="0.0178373">
+        <testcase classname="src/shared/config/runtimeConfig.test.js" name="rejects unsafe timeout 0" time="0.0140015">
+        </testcase>
+        <testcase classname="src/shared/config/runtimeConfig.test.js" name="rejects unsafe timeout -1" time="0.0005118">
+        </testcase>
+        <testcase classname="src/shared/config/runtimeConfig.test.js" name="rejects unsafe timeout 1.5" time="0.0004012">
+        </testcase>
+        <testcase classname="src/shared/config/runtimeConfig.test.js" name="rejects unsafe timeout 60001" time="0.0003413">
+        </testcase>
+        <testcase classname="src/shared/config/runtimeConfig.test.js" name="rejects unsafe timeout invalid" time="0.0003382">
+        </testcase>
+        <testcase classname="src/shared/config/runtimeConfig.test.js" name="rejects unsafe API URL http://example.com/api" time="0.0003981">
+        </testcase>
+        <testcase classname="src/shared/config/runtimeConfig.test.js" name="rejects unsafe API URL ftp://localhost/api" time="0.0003189">
+        </testcase>
+        <testcase classname="src/shared/config/runtimeConfig.test.js" name="accepts explicit timeout and localhost development without trailing slash" time="0.000442">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/shared/ui/LoadingSkeleton.test.jsx" timestamp="2026-10-07T09:31:40.255Z" hostname="LBT" tests="2" failures="0" errors="0" skipped="0" time="0.0726052">
+        <testcase classname="src/shared/ui/LoadingSkeleton.test.jsx" name="LoadingSkeleton &gt; announces loading without fake controls (detail=false)" time="0.0679413">
+        </testcase>
+        <testcase classname="src/shared/ui/LoadingSkeleton.test.jsx" name="LoadingSkeleton &gt; announces loading without fake controls (detail=true)" time="0.0035078">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/shared/ui/ProductImage.test.jsx" timestamp="2026-10-07T09:31:40.256Z" hostname="LBT" tests="1" failures="0" errors="0" skipped="0" time="0.0561324">
+        <testcase classname="src/shared/ui/ProductImage.test.jsx" name="never loads an image with an unsafe URL scheme" time="0.0549663">
+        </testcase>
+    </testsuite>
+</testsuites>

@@ -1,0 +1,412 @@
+openapi: 3.0.3
+info:
+  title: Similar Products API
+  version: 1.0.0
+  description: >-
+    Public contract for retrieving the product details of all similar products.
+    A successful response is atomic, unique by product id and ordered by similarity.
+  contact:
+    name: Technical test maintainers
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: http://localhost:5000
+    description: Local development
+tags:
+  - name: Similar products
+    description: Product similarity aggregation.
+paths:
+  /product/{productId}/similar:
+    get:
+      tags:
+        - Similar products
+      operationId: getSimilarProducts
+      summary: Get similar products
+      description: >-
+        Returns every valid similar product in similarity order. The operation is
+        all-or-nothing: a 200 response never contains a silently partial result.
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/ProductIdPath'
+        - $ref: '#/components/parameters/CorrelationIdHeader'
+      responses:
+        '200':
+          description: Similar products, ordered by similarity. An empty list is valid.
+          headers:
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+            Cache-Control:
+              $ref: '#/components/headers/NoStore'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimilarProducts'
+              examples:
+                normal:
+                  summary: Ordered result
+                  value:
+                    - id: '2'
+                      name: Dress
+                      price: 19.99
+                      availability: true
+                    - id: '3'
+                      name: Blazer
+                      price: 29.99
+                      availability: false
+                    - id: '4'
+                      name: Boots
+                      price: 39.99
+                      availability: true
+                empty:
+                  summary: No similar products
+                  value: []
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/NotAcceptable'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '502':
+          $ref: '#/components/responses/BadGateway'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+      x-requirements:
+        - BE-F-001
+        - BE-F-006
+        - BE-F-010
+        - BE-F-013
+        - BE-F-014
+        - BE-R-016
+      x-slo-specification: Documentacion/specs/backend/ERRORES_Y_SLO_V1_1.md
+components:
+  parameters:
+    ProductIdPath:
+      name: productId
+      in: path
+      required: true
+      description: Opaque product identifier.
+      schema:
+        $ref: '#/components/schemas/ProductId'
+      example: '1'
+    CorrelationIdHeader:
+      name: X-Correlation-ID
+      in: header
+      required: false
+      description: >-
+        Caller-provided correlation identifier. Invalid or absent values are replaced
+        by a server-generated identifier.
+      schema:
+        type: string
+      example: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+  headers:
+    CorrelationId:
+      description: Correlation identifier used by the service for this request.
+      required: true
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 64
+      example: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+    NoStore:
+      description: The public aggregate contains price and availability and is not client-cacheable by default.
+      required: true
+      schema:
+        type: string
+        enum:
+          - no-store
+      example: no-store
+    AllowGet:
+      description: Methods supported by this resource.
+      required: true
+      schema:
+        type: string
+        enum:
+          - GET
+      example: GET
+    RetryAfter:
+      description: Retry delay in seconds or an HTTP date when the service can provide a defensible value.
+      required: false
+      schema:
+        type: string
+      example: '10'
+  responses:
+    BadRequest:
+      description: The provided product identifier is invalid.
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+        Cache-Control:
+          $ref: '#/components/headers/NoStore'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          example:
+            type: urn:problem-type:similar-products:invalid-product-id
+            title: Invalid product identifier
+            status: 400
+            detail: The product identifier does not satisfy the public contract.
+            instance: /product/invalid%20id/similar
+            code: INVALID_PRODUCT_ID
+            correlationId: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+    NotFound:
+      description: The requested product or one required related product was not found.
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+        Cache-Control:
+          $ref: '#/components/headers/NoStore'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          examples:
+            productNotFound:
+              value:
+                type: urn:problem-type:similar-products:product-not-found
+                title: Product not found
+                status: 404
+                detail: The requested product was not found.
+                instance: /product/unknown/similar
+                code: PRODUCT_NOT_FOUND
+                correlationId: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+            relatedProductNotFound:
+              value:
+                type: urn:problem-type:similar-products:related-product-not-found
+                title: Related product not found
+                status: 404
+                detail: A product required to build the aggregate was not found.
+                instance: /product/4/similar
+                code: RELATED_PRODUCT_NOT_FOUND
+                correlationId: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+    MethodNotAllowed:
+      description: The HTTP method is not supported by this resource.
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+        Cache-Control:
+          $ref: '#/components/headers/NoStore'
+        Allow:
+          $ref: '#/components/headers/AllowGet'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          example:
+            type: urn:problem-type:similar-products:method-not-allowed
+            title: Method not allowed
+            status: 405
+            detail: The requested HTTP method is not supported.
+            instance: /product/1/similar
+            code: METHOD_NOT_ALLOWED
+            correlationId: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+    NotAcceptable:
+      description: The requested response media type is not supported.
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+        Cache-Control:
+          $ref: '#/components/headers/NoStore'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          example:
+            type: urn:problem-type:similar-products:not-acceptable
+            title: Not acceptable
+            status: 406
+            detail: The requested response media type is not supported.
+            instance: /product/1/similar
+            code: NOT_ACCEPTABLE
+            correlationId: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+    InternalError:
+      description: An unexpected internal error occurred.
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+        Cache-Control:
+          $ref: '#/components/headers/NoStore'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          example:
+            type: urn:problem-type:similar-products:internal-error
+            title: Internal error
+            status: 500
+            detail: An unexpected internal error occurred.
+            instance: /product/1/similar
+            code: INTERNAL_ERROR
+            correlationId: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+    BadGateway:
+      description: The upstream service returned an unusable response.
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+        Cache-Control:
+          $ref: '#/components/headers/NoStore'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          example:
+            type: urn:problem-type:similar-products:upstream-bad-response
+            title: Upstream response error
+            status: 502
+            detail: A dependency returned a response that cannot be used.
+            instance: /product/5/similar
+            code: UPSTREAM_BAD_RESPONSE
+            correlationId: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+    ServiceUnavailable:
+      description: The dependency is unavailable, rate-limited, or local capacity is exhausted.
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+        Cache-Control:
+          $ref: '#/components/headers/NoStore'
+        Retry-After:
+          $ref: '#/components/headers/RetryAfter'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          examples:
+            upstreamUnavailable:
+              value:
+                type: urn:problem-type:similar-products:upstream-unavailable
+                title: Upstream unavailable
+                status: 503
+                detail: A required dependency is temporarily unavailable.
+                instance: /product/1/similar
+                code: UPSTREAM_UNAVAILABLE
+                correlationId: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+            upstreamRateLimited:
+              value:
+                type: urn:problem-type:similar-products:upstream-rate-limited
+                title: Upstream rate limited
+                status: 503
+                detail: A required dependency is temporarily rate limited.
+                instance: /product/1/similar
+                code: UPSTREAM_RATE_LIMITED
+                correlationId: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+            serviceOverloaded:
+              value:
+                type: urn:problem-type:similar-products:service-overloaded
+                title: Service overloaded
+                status: 503
+                detail: The service cannot accept more dependency work at this time.
+                instance: /product/1/similar
+                code: SERVICE_OVERLOADED
+                correlationId: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+    GatewayTimeout:
+      description: A required dependency did not complete within the request budget.
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+        Cache-Control:
+          $ref: '#/components/headers/NoStore'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          example:
+            type: urn:problem-type:similar-products:upstream-timeout
+            title: Upstream timeout
+            status: 504
+            detail: A required dependency did not complete within the request budget.
+            instance: /product/3/similar
+            code: UPSTREAM_TIMEOUT
+            correlationId: 4f6d0cd7-88a0-4709-a25a-1890dcb4bf1c
+  schemas:
+    ProductId:
+      type: string
+      minLength: 1
+      example: '1'
+    SimilarProducts:
+      type: array
+      description: >-
+        Complete list ordered by similarity. Uniqueness is determined by product id;
+        the service preserves the first occurrence received from the dependency.
+      minItems: 0
+      uniqueItems: true
+      items:
+        $ref: '#/components/schemas/ProductDetail'
+    ProductDetail:
+      type: object
+      additionalProperties: false
+      description: Validated public product detail.
+      required:
+        - id
+        - name
+        - price
+        - availability
+      properties:
+        id:
+          $ref: '#/components/schemas/ProductId'
+        name:
+          type: string
+          minLength: 1
+          maxLength: 255
+          example: Dress
+        price:
+          type: number
+          minimum: 0
+          example: 19.99
+        availability:
+          type: boolean
+          example: true
+    Problem:
+      type: object
+      additionalProperties: false
+      description: Safe public error based on Problem Details.
+      required:
+        - type
+        - title
+        - status
+        - detail
+        - instance
+        - code
+        - correlationId
+      properties:
+        type:
+          type: string
+          format: uri
+        title:
+          type: string
+          minLength: 1
+        status:
+          type: integer
+          minimum: 400
+          maximum: 599
+        detail:
+          type: string
+          minLength: 1
+        instance:
+          type: string
+          format: uri-reference
+        code:
+          type: string
+          enum:
+            - INVALID_PRODUCT_ID
+            - ROUTE_NOT_FOUND
+            - METHOD_NOT_ALLOWED
+            - NOT_ACCEPTABLE
+            - PRODUCT_NOT_FOUND
+            - RELATED_PRODUCT_NOT_FOUND
+            - UPSTREAM_BAD_RESPONSE
+            - UPSTREAM_RATE_LIMITED
+            - UPSTREAM_UNAVAILABLE
+            - SERVICE_OVERLOADED
+            - UPSTREAM_TIMEOUT
+            - INTERNAL_ERROR
+        correlationId:
+          type: string
+          minLength: 1
+          maxLength: 64
