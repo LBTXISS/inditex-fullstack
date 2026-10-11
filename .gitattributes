@@ -1,0 +1,4 @@
+# Conservar los bytes que comprueba el manifiesto, también al clonar en Windows.
+* -text
+*.png binary
+*.jpg binary

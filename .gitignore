@@ -1,0 +1,24 @@
+# Dependencias y resultados de ejecución
+node_modules/
+target/
+dist/
+coverage/
+playwright-report/
+test-results/
+*.log
+
+# Configuración local; las plantillas sí forman parte del repositorio
+.env
+.env.*
+!.env.example
+
+# Evidencia generada después de la entrega
+Documentacion/evidencias/frontend/run-*/
+Documentacion/evidencias/backend-contenedor/*-evaluacion.json
+
+# Archivos del editor y del sistema
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

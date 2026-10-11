@@ -1,7 +1,17 @@
-﻿{
+{
     "formatVersion":  1,
-    "createdAtUtc":  "2026-10-07T10:08:38.3754028Z",
+    "createdAtUtc":  "2026-10-11T21:14:55.435Z",
     "files":  [
+                  {
+                      "path":  ".gitattributes",
+                      "bytes":  116,
+                      "sha256":  "A5B445C948AB4AFE68D3C29349B2758C921E47B5BB47B28736C28576D2937FE8"
+                  },
+                  {
+                      "path":  ".gitignore",
+                      "bytes":  445,
+                      "sha256":  "C96853F5C1D6B094E0F8F56B18CAF2CEB34380EC78A97AFA8C5C7F88B18B046B"
+                  },
                   {
                       "path":  "assets/application-metrics.png",
                       "bytes":  48742,
@@ -428,6 +438,11 @@
                       "sha256":  "778C80477F05B53DEAF406D30DCADC5A305473E502A29E56D3D223CFEF15E224"
                   },
                   {
+                      "path":  "Documentacion/scripts/Actualizar-Manifiesto.ps1",
+                      "bytes":  1473,
+                      "sha256":  "471979769BA38E87F8244709DF9A646354630CCB76B2CD83EEC57DCC9DCB7DD0"
+                  },
+                  {
                       "path":  "Documentacion/scripts/Verificar-Manifiesto.ps1",
                       "bytes":  931,
                       "sha256":  "A08969E44F8DF1DF5F0263CDCDDDFB32FBC2B4B531BACB79CFBD595CC396CB57"
@@ -719,8 +734,8 @@
                   },
                   {
                       "path":  "README.md",
-                      "bytes":  622,
-                      "sha256":  "C7EED8328B16D1411DBCE7D6F26BCAA6244597248EB84E74071FF7F34A44A288"
+                      "bytes":  2495,
+                      "sha256":  "74EB24FDE64703ED98AF019F0913C51CB1914AF66919C17A843138DEB8D201F0"
                   },
                   {
                       "path":  "TESTING_Y_METRICAS.md",
