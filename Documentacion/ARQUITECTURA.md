@@ -59,4 +59,4 @@ La búsqueda filtra marca/modelo en memoria y no lanza HTTP; useMemo evita recom
 
 Micrometer/Actuator exportan HTTP/JVM a Influx existente, opt-in y con etiquetas de baja cardinalidad. El exportador está fuera del dominio y no condiciona la respuesta de negocio; [caída](evidencias/observabilidad/metrics-outage.json) y [recuperación](evidencias/observabilidad/metrics-recovery.json) se comprobaron localmente. Puede perderse telemetría durante una caída.
 
-Los tests separan reglas de negocio, transporte real y navegador. Los workflows incluidos asumen cada aplicación como raíz de su repositorio, no un workflow automático del ZIP raíz. La [guía de testing](../TESTING_Y_METRICAS.md) contiene comandos, evidencia y límites.
+Los tests separan reglas de negocio, transporte real y navegador. El [workflow de calidad](../.github/workflows/calidad.yml) trabaja desde la raíz del repositorio y ejecuta integridad, backend con Docker y frontend con Chromium. La etiqueta `entrega-original` conserva las plantillas por aplicación incluidas en el ZIP. La [guía de testing](../TESTING_Y_METRICAS.md) contiene comandos, evidencia y límites.

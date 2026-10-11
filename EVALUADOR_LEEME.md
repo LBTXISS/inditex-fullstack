@@ -30,4 +30,4 @@ El [documento de arquitectura](Documentacion/ARQUITECTURA.md) explica alternativ
 - **Seis grupos de aceptación Chrome**, con [19 capturas](Documentacion/evidencias/frontend/20261007-capturas/README.md), API/POST simulados.
 - **k6:** última ejecución documentada, 12.200 checks correctos y cero HTTP 500 internos; p95 normal 111,25 ms y extremo 6.265,11 ms.
 
-Las mediciones corresponden al entorno local del 7 de octubre de 2026, no a un SLA productivo. Los workflows están preparados por aplicación, sin ejecución remota acreditada. Grafana/Actuator están configurados para uso local.
+Las mediciones corresponden al entorno local del 7 de octubre de 2026, no a un SLA productivo. El repositorio incorpora un [workflow de calidad](.github/workflows/calidad.yml); sus resultados actuales se consultan en Actions y se distinguen de estas evidencias históricas. Grafana/Actuator están configurados para uso local.

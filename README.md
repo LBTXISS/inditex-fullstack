@@ -1,5 +1,7 @@
 # Prueba técnica FullStack — Inditex
 
+[![Calidad](https://github.com/LBTXISS/inditex-fullstack/actions/workflows/calidad.yml/badge.svg)](https://github.com/LBTXISS/inditex-fullstack/actions/workflows/calidad.yml)
+
 Dos aplicaciones independientes: una API que agrega productos similares y una SPA para consultar dispositivos y añadirlos al carrito.
 
 | Aplicación | Tecnologías | Funcionalidad |
@@ -46,3 +48,12 @@ El manifiesto de cada versión comprueba sus archivos mediante SHA256. Desde la 
 ```
 
 Las evidencias incluidas corresponden a ejecuciones locales documentadas; los nuevos resultados deben revisarse por separado. Las dependencias instaladas y los artefactos generados se excluyen de Git.
+
+## Comprobaciones automáticas
+
+El [workflow de calidad](.github/workflows/calidad.yml) comprueba el manifiesto y ejecuta dos jobs independientes:
+
+- **Backend:** contratos OpenAPI, tests Maven completos —incluida la integración con Docker— y cobertura JaCoCo.
+- **Frontend:** ESLint, checkJs, Vitest con cobertura, build y aceptación en Chromium. El API y el POST del carrito están simulados en esa aceptación.
+
+Los informes se conservan como artefactos durante siete días. La pestaña [Actions](https://github.com/LBTXISS/inditex-fullstack/actions) muestra el resultado de cada ejecución.

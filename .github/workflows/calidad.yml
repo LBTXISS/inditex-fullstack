@@ -1,0 +1,121 @@
+name: Calidad
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: calidad-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  integridad:
+    name: Integridad de los archivos
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
+      - name: Comprobar manifiesto SHA256
+        shell: pwsh
+        run: ./Documentacion/scripts/Verificar-Manifiesto.ps1 -RutaRaiz .
+
+  backend:
+    name: Backend y contratos
+    needs: integridad
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+          cache-dependency-path: backend/pom.xml
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: backend/contracts/package-lock.json
+      - name: Instalar el validador de contratos
+        working-directory: backend/contracts
+        run: npm ci
+      - name: Validar OpenAPI
+        working-directory: backend/contracts
+        run: npm run lint
+      - name: Comprobar Docker
+        run: docker info > /dev/null
+      - name: Ejecutar tests y generar cobertura
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends unzip
+          bash ./mvnw -B -ntp clean verify
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: backend-resultados
+          retention-days: 7
+          path: |
+            backend/target/surefire-reports
+            backend/target/site/jacoco
+
+  frontend:
+    name: Frontend y navegador
+    needs: integridad
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Comprobar estilo
+        run: npm run lint
+      - name: Comprobar tipos de JavaScript
+        run: npm run typecheck
+      - name: Ejecutar tests y generar cobertura
+        run: npm test -- --coverage
+      - name: Compilar para producción
+        run: npm run build
+      - name: Instalar Chromium y sus dependencias
+        run: node node_modules/playwright-core/cli.js install --with-deps chromium
+      - name: Seleccionar Chromium instalado
+        run: |
+          node --input-type=module <<'JS' >> "$GITHUB_ENV"
+          import { chromium } from 'playwright-core';
+          console.log(`BROWSER_EXECUTABLE_PATH=${chromium.executablePath()}`);
+          JS
+      - name: Ejecutar aceptación en navegador
+        env:
+          ACCEPTANCE_EVIDENCE_DIR: ${{ github.workspace }}/artifacts/frontend-browser
+        run: npm run test:browser
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: frontend-resultados
+          retention-days: 7
+          path: |
+            frontend/coverage
+            frontend/dist
+            artifacts/frontend-browser

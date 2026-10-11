@@ -5,6 +5,7 @@ dist/
 coverage/
 playwright-report/
 test-results/
+artifacts/
 *.log
 
 # Configuración local; las plantillas sí forman parte del repositorio
